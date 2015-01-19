@@ -172,7 +172,7 @@ class Entity
 	
 	public function setTag( tag:String):Void
 	{
-		world.tags.set( id, tag);
+		world.tags.set(id, tag);
 	}
 	
 	/**
@@ -182,7 +182,7 @@ class Entity
 	
 	public function getTag():String
 	{
-		return world.tags.get( id);
+		return world.tags.get(id);
 	}
 	
 	/**
@@ -191,6 +191,10 @@ class Entity
 	
 	public function destroy():Void
 	{
+        if (world.tags.exists(id)) 
+        {
+            world.tags.remove(id);
+        }
 		world.destroyEntity( this);
 	}
 	
