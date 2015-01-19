@@ -8,6 +8,7 @@ import haxe.ds.GenericStack;
 
 typedef Constructable = { function new():Void; };
 
+//TODO: removeTag from world
 class EntityWorld
 {
 	
@@ -35,6 +36,8 @@ class EntityWorld
 		systems = new List<IEntitySystem>();
 		
 		contexts = new Map<String,Dynamic>();
+
+		tags = new Map<Int,String>();
 		
 		delta = 0.0;
 	}
